@@ -16,12 +16,12 @@
     <div class="container">
       <h1>BintangLaut.co.id</h1>
       <hr>
-      <a href="<?=base_url()?>index.php/home/tambah" class="btn btn-success">+ Artikel</a>
+      <a href="<?=base_url()?>index.php/artikel/tambah" class="btn btn-success">+ Artikel</a>
     </div>
 
     <div class="container">
       <h2>Daftar Artikel</h2>
-      <form action="<?=base_url()?>index.php/home/index" method="get">
+      <form action="<?=base_url()?>index.php/artikel/index" method="get">
         <input type="text" name="cari">
         <input type="submit" value="Cari" class="btn btn-default">
       </form>
@@ -36,8 +36,8 @@
               <h3><?php echo $data->judul?></h3>
               <p>Artikel: <?php echo substr($data->artikel, 0 , 250) ?></p>
               <p>
-                <a href="<?=base_url()?>index.php/home/edit/<?=$data->id?>" class="btn btn-info" role="button">Edit</a>
-                <a href="<?=base_url()?>index.php/home/deletedata/<?=$data->id?>/<?=$data->foto?>" class="btn btn-danger" role="button">Hapus</a>
+                <a href="<?=base_url()?>index.php/artikel/edit/<?=$data->id?>" class="btn btn-info" role="button">Edit</a>
+                <a href="<?=base_url()?>index.php/artikel/deletedata/<?=$data->id?>/<?=$data->foto?>" class="btn btn-danger" role="button">Hapus</a>
               </p>
             </div>
           </div>
