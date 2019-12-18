@@ -44,7 +44,8 @@
 			<!-- SEARCH FORM -->
 			<form class="form-inline ml-3">
 				<div class="input-group input-group-sm">
-					<input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+					<input class="form-control form-control-navbar" type="search" placeholder="Search"
+						aria-label="Search">
 					<div class="input-group-append">
 						<button class="btn btn-navbar" type="submit">
 							<i class="fas fa-search"></i>
@@ -65,7 +66,8 @@
 						<a href="#" class="dropdown-item">
 							<!-- Message Start -->
 							<div class="media">
-								<img src="<?= base_url()?>dist/img/user1-128x128.jpg" alt="User Avatar" class="img-size-50 mr-3 img-circle">
+								<img src="<?= base_url()?>dist/img/user1-128x128.jpg" alt="User Avatar"
+									class="img-size-50 mr-3 img-circle">
 								<div class="media-body">
 									<h3 class="dropdown-item-title">
 										Brad Diesel
@@ -81,7 +83,8 @@
 						<a href="#" class="dropdown-item">
 							<!-- Message Start -->
 							<div class="media">
-								<img src="<?= base_url()?>dist/img/user8-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+								<img src="<?= base_url()?>dist/img/user8-128x128.jpg" alt="User Avatar"
+									class="img-size-50 img-circle mr-3">
 								<div class="media-body">
 									<h3 class="dropdown-item-title">
 										John Pierce
@@ -97,11 +100,13 @@
 						<a href="#" class="dropdown-item">
 							<!-- Message Start -->
 							<div class="media">
-								<img src="<?= base_url() ?>dist/img/user3-128x128.jpg" alt="User Avatar" class="img-size-50 img-circle mr-3">
+								<img src="<?= base_url() ?>dist/img/user3-128x128.jpg" alt="User Avatar"
+									class="img-size-50 img-circle mr-3">
 								<div class="media-body">
 									<h3 class="dropdown-item-title">
 										Nora Silvester
-										<span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+										<span class="float-right text-sm text-warning"><i
+												class="fas fa-star"></i></span>
 									</h3>
 									<p class="text-sm">The subject goes here</p>
 									<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
@@ -153,8 +158,8 @@
 		<aside class="main-sidebar sidebar-dark-primary elevation-4">
 			<!-- Brand Logo -->
 			<a href="<?= base_url()?>index3.html" class="brand-link">
-				<img src="<?= base_url()?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-					style="opacity: .8">
+				<img src="<?= base_url()?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+					class="brand-image img-circle elevation-3" style="opacity: .8">
 				<span class="brand-text font-weight-light">AdminLTE 3</span>
 			</a>
 
@@ -163,7 +168,8 @@
 				<!-- Sidebar user (optional) -->
 				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
 					<div class="image">
-						<img src="<?= base_url()?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+						<img src="<?= base_url()?>dist/img/user2-160x160.jpg" class="img-circle elevation-2"
+							alt="User Image">
 					</div>
 					<div class="info">
 						<a href="#" class="d-block">Alexander Pierce</a>
@@ -172,7 +178,8 @@
 
 				<!-- Sidebar Menu -->
 				<nav class="mt-2">
-					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
+						data-accordion="false">
 						<!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -185,20 +192,20 @@
 								</p>
 							</a>
 						<li class="nav-item">
-							<a href="<?= base_url()?>examples/projects.html" class="nav-link">
+							<a href="<?= base_url()?>index.php/artikel/index/" class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Projects</p>
+								<p>Artikel</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="<?= base_url()?>examples/project_add.html" class="nav-link active">
+							<a href="<?= base_url()?>index.php/artikel/tambah" class="nav-link active">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Project Add</p>
+								<p>Tambah Artikel</p>
 							</a>
 						<li class="nav-item">
-							<a href="<?= base_url()?>examples/project_edit.html" class="nav-link">
+							<a href="<?= base_url()?>index.php/artikel/edit/" class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Project Edit</p>
+								<p>Edit Artikel</p>
 							</a>
 						</li>
 						</li>
@@ -250,14 +257,14 @@
 							<div class="card-header">
 								<h3 class="card-title">General</h3>
 								<div class="card-tools">
-									<button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip"
-										title="Collapse">
+									<button type="button" class="btn btn-tool" data-card-widget="collapse"
+										data-toggle="tooltip" title="Collapse">
 										<i class="fas fa-minus"></i></button>
 								</div>
 							</div>
 							<div class="card-body">
-								<form action="<?=base_url()?>index.php/artikel/insertdata" method="post" enctype="multipart/form-data"
-									class="form-group">
+								<form action="<?=base_url()?>index.php/artikel/insertdata" method="post"
+									enctype="multipart/form-data" class="form-group">
 									<div class="form-group">
 										<label>Judul</label>
 										<input type="text" name="judul" value="" class="form-control">
@@ -270,7 +277,8 @@
 										<label>foto</label>
 										<input type="file" name="fotopost" class="form-control">
 									</div>
-									<input type="submit" name="submit" value="Submit" class="btn btn-success float-right">
+									<input type="submit" name="submit" value="Submit"
+										class="btn btn-success float-right">
 								</form>
 							</div>
 						</div>

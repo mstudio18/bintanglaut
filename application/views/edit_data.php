@@ -230,12 +230,12 @@
 				<div class="container-fluid">
 					<div class="row mb-2">
 						<div class="col-sm-6">
-							<h1>Project Add</h1>
+							<h1>Edit Artikel</h1>
 						</div>
 						<div class="col-sm-6">
 							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="#">Home</a></li>
-								<li class="breadcrumb-item active">Project Add</li>
+								<li class="breadcrumb-item"><a href="<?= base_url()?>index.php/artikel/index/" >Home</a></li>
+								<li class="breadcrumb-item active">Edit Artikel</li>
 							</ol>
 						</div>
 					</div>
@@ -261,21 +261,21 @@
 									class="form-group">
 									<div class="form-group">
 										<label>Nama</label>
-										<input type="text" name="name" value="<?=$data->judul?>">
+										<input class="form-control" type="text" name="name" value="<?=$data->judul?>">
 									</div>
 									<div class="form-group">
 										<label>Alamat</label>
-										<textarea name="alamat" rows="8" cols="80"><?=$data->artikel?></textarea>
+										<textarea class="form-control" name="alamat" rows="8" cols="80"><?=$data->artikel?></textarea>
 									</div>
 									<div class="form-group">
 										<label>foto</label>
-										<input type="file" name="fotopost">
+										<input class="form-control" type="file" name="fotopost">
 									</div>
 									<div class="form-group">
 										<!-- file lama -->
-										<input type="hidden" name="filelama" value="<?=$data->foto?>">
+										<input class="form-control" type="hidden" name="filelama" value="<?=$data->foto?>">
 										<!-- ID -->
-										<input type="hidden" name="id" value="<?=$data->id?>">
+										<input class="form-control" type="hidden" name="id" value="<?=$data->id?>">
 									</div>
 
 									<input type="submit" name="submit" value="Submit" class="btn btn-success float-right">

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -15,52 +15,326 @@
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/adminlte.min.css">
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+	<!-- DataTables -->
+	<link rel="stylesheet" href="<?=base_url()?>plugins/datatables-bs4/css/dataTables.bootstrap4.css">
 
 	<!-- Bootstrap >
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?=base_url()?>assets/font/glyphicons-halflings-regular.ttf"-->
 
 </head>
-  <body>
-<!-- test repo tambahan buat liat perubahan-->
-    <div class="container">
-      <h1>BintangLaut.co.id</h1>
-      <hr>
-      <a href="<?=base_url()?>index.php/artikel/tambah" class="btn btn-success">+ Artikel</a>
-    </div>
 
-    <div class="container">
-      <h2>Daftar Artikel</h2>
-      <form action="<?=base_url()?>index.php/artikel/index" method="get">
-        <input type="text" name="cari">
-        <input type="submit" value="Cari" class="btn btn-default">
-      </form>
-      <div class="row">
+<body class="hold-transition sidebar-mini">
+	<!-- Site wrapper -->
+	<div class="wrapper">
+		<!-- Navbar -->
+		<nav class="main-header navbar navbar-expand navbar-white navbar-light">
+			<!-- Left navbar links -->
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
+				</li>
+				<li class="nav-item d-none d-sm-inline-block">
+					<a href="<?= base_url()?>index.php/artikel" class="nav-link">Home</a>
+				</li>
+				<li class="nav-item d-none d-sm-inline-block">
+					<a href="#" class="nav-link">Contact</a>
+				</li>
+			</ul>
 
-        <?php foreach ($data as $data): ?>
-          <div class="col-sm-6 col-md-3">
-            <a href="#" class="thumbnail">
-              <img src="<?=base_url()?>assets/picture/<?=$data->foto?>" alt="foto">
-            </a>
-            <div class="caption">
-              <h3><?php echo $data->judul?></h3>
-              <p>Artikel: <?php echo substr($data->artikel, 0 , 250) ?></p>
-              <p>
-                <a href="<?=base_url()?>index.php/artikel/edit/<?=$data->id?>" class="btn btn-info" role="button">Edit</a>
-                <a href="<?=base_url()?>index.php/artikel/deletedata/<?=$data->id?>/<?=$data->foto?>" class="btn btn-danger" role="button">Hapus</a>
-              </p>
-            </div>
-          </div>
-        <?php endforeach; ?>
+			<!-- SEARCH FORM -->
+			<form class="form-inline ml-3">
+				<div class="input-group input-group-sm">
+					<input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+					<div class="input-group-append">
+						<button class="btn btn-navbar" type="submit">
+							<i class="fas fa-search"></i>
+						</button>
+					</div>
+				</div>
+			</form>
 
+			<!-- Right navbar links -->
+			<ul class="navbar-nav ml-auto">
+				<!-- Messages Dropdown Menu -->
+				<li class="nav-item dropdown">
+					<a class="nav-link" data-toggle="dropdown" href="#">
+						<i class="far fa-comments"></i>
+						<span class="badge badge-danger navbar-badge">3</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+						<a href="#" class="dropdown-item">
+							<!-- Message Start -->
+							<div class="media">
+								<img src="<?= base_url()?>dist/img/user1-128x128.jpg" alt="User Avatar"
+									class="img-size-50 mr-3 img-circle">
+								<div class="media-body">
+									<h3 class="dropdown-item-title">
+										Brad Diesel
+										<span class="float-right text-sm text-danger"><i class="fas fa-star"></i></span>
+									</h3>
+									<p class="text-sm">Call me whenever you can...</p>
+									<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+								</div>
+							</div>
+							<!-- Message End -->
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item">
+							<!-- Message Start -->
+							<div class="media">
+								<img src="<?= base_url()?>dist/img/user8-128x128.jpg" alt="User Avatar"
+									class="img-size-50 img-circle mr-3">
+								<div class="media-body">
+									<h3 class="dropdown-item-title">
+										John Pierce
+										<span class="float-right text-sm text-muted"><i class="fas fa-star"></i></span>
+									</h3>
+									<p class="text-sm">I got your message bro</p>
+									<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+								</div>
+							</div>
+							<!-- Message End -->
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item">
+							<!-- Message Start -->
+							<div class="media">
+								<img src="<?= base_url() ?>dist/img/user3-128x128.jpg" alt="User Avatar"
+									class="img-size-50 img-circle mr-3">
+								<div class="media-body">
+									<h3 class="dropdown-item-title">
+										Nora Silvester
+										<span class="float-right text-sm text-warning"><i class="fas fa-star"></i></span>
+									</h3>
+									<p class="text-sm">The subject goes here</p>
+									<p class="text-sm text-muted"><i class="far fa-clock mr-1"></i> 4 Hours Ago</p>
+								</div>
+							</div>
+							<!-- Message End -->
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
+					</div>
+				</li>
+				<!-- Notifications Dropdown Menu -->
+				<li class="nav-item dropdown">
+					<a class="nav-link" data-toggle="dropdown" href="#">
+						<i class="far fa-bell"></i>
+						<span class="badge badge-warning navbar-badge">15</span>
+					</a>
+					<div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+						<span class="dropdown-item dropdown-header">15 Notifications</span>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item">
+							<i class="fas fa-envelope mr-2"></i> 4 new messages
+							<span class="float-right text-muted text-sm">3 mins</span>
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item">
+							<i class="fas fa-users mr-2"></i> 8 friend requests
+							<span class="float-right text-muted text-sm">12 hours</span>
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item">
+							<i class="fas fa-file mr-2"></i> 3 new reports
+							<span class="float-right text-muted text-sm">2 days</span>
+						</a>
+						<div class="dropdown-divider"></div>
+						<a href="#" class="dropdown-item dropdown-footer">See All Notifications</a>
+					</div>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
+						<i class="fas fa-th-large"></i>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- /.navbar -->
 
-      </div>
-    </div>
-    <div class="container">
-      <?php echo $pagination ?>
-    </div>
+		<!-- Main Sidebar Container -->
+		<aside class="main-sidebar sidebar-dark-primary elevation-4">
+			<!-- Brand Logo -->
+			<a href="<?= base_url()?>index3.html" class="brand-link">
+				<img src="<?= base_url()?>dist/img/AdminLTELogo.png" alt="AdminLTE Logo"
+					class="brand-image img-circle elevation-3" style="opacity: .8">
+				<span class="brand-text font-weight-light">AdminLTE 3</span>
+			</a>
 
-    <script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
-    <script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script>
-  </body>
+			<!-- Sidebar -->
+			<div class="sidebar">
+				<!-- Sidebar user (optional) -->
+				<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+					<div class="image">
+						<img src="<?= base_url()?>dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+					</div>
+					<div class="info">
+						<a href="#" class="d-block">Alexander Pierce</a>
+					</div>
+				</div>
+
+				<!-- Sidebar Menu -->
+				<nav class="mt-2">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+						<!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+
+						<li class="nav-item has-treeview menu-open">
+							<a href="#" class="nav-link active">
+								<i class="nav-icon fas fa-book"></i>
+								<p>
+									Pages
+									<i class="fas fa-angle-left right"></i>
+								</p>
+							</a>
+						<li class="nav-item">
+							<a href="<?= base_url()?>index.php/artikel/index/" class="nav-link active">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Artikel</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?= base_url()?>index.php/artikel/tambah" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Tambah Artikel</p>
+							</a>
+						<li class="nav-item">
+							<a href="<?= base_url()?>index.php/artikel/edit/" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Edit Artikel</p>
+							</a>
+						</li>
+						</li>
+						<li class="nav-item">
+							<a href="<?= base_url()?>examples/project_detail.html" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Project Detail</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="<?= base_url()?>examples/contacts.html" class="nav-link">
+								<i class="far fa-circle nav-icon"></i>
+								<p>Contacts</p>
+							</a>
+						</li>
+					</ul>
+					</li>
+					</ul>
+				</nav>
+				<!-- /.sidebar-menu -->
+			</div>
+			<!-- /.sidebar -->
+		</aside>
+
+		<!-- Content Wrapper. Contains page content -->
+		<div class="content-wrapper">
+			<!-- Content Header (Page header) -->
+			<section class="content-header">
+				<div class="container-fluid">
+					<div class="row mb-2">
+						<div class="col-sm-6">
+							<h1>Daftar Artikel</h1>
+						</div>
+						<div class="col-sm-6">
+							<ol class="breadcrumb float-sm-right">
+								<li class="breadcrumb-item"><a href="#">Home</a></li>
+								<li class="breadcrumb-item active">Project Add</li>
+							</ol>
+						</div>
+					</div>
+				</div><!-- /.container-fluid -->
+			</section>
+			<div class="card">
+				<div class="card-header">
+					<h3 class="card-title">DataTable with default features</h3>
+				</div>
+				<!-- /.card-header -->
+				<div class="card-body">
+					<form action="<?=base_url()?>index.php/artikel/index" method="get">
+						<table id="data_artikel" class="table table-bordered table-striped">
+							<thead>
+								<tr>
+									<th>Judul</th>
+									<th>isi artikel</th>
+									<th>gambar</th>
+									<th>status</th>
+									<th>aksi</th>
+								</tr>
+							</thead>
+							<tbody>
+								<?php foreach ($data as $data): ?>
+								<tr>
+									<td>
+										<?php echo $data->judul?>
+									</td>
+									<td>
+										<?php echo substr($data->artikel, 0 , 250) ?>
+									</td>
+									<td>
+										<img src="<?=base_url()?>assets/picture/<?=$data->foto?>" alt="foto" style="max-width:150px">
+									</td>
+									<td>Terposting</td>
+									<td>
+										<a href="<?=base_url()?>index.php/artikel/edit/<?=$data->id?>" class="btn btn-info"
+											role="button">Edit</a>
+										<a href="<?=base_url()?>index.php/artikel/deletedata/<?=$data->id?>/<?=$data->foto?>"
+											class="btn btn-danger" role="button">Hapus</a>
+									</td>
+								</tr>
+								<?php endforeach; ?>
+						</table>
+					</form>
+				</div>
+				<!-- /.card-body -->
+			</div>
+			<div class="container">
+				<?php echo $pagination ?>
+			</div>
+			<footer class="main-footer">
+				<div class="float-right d-none d-sm-block">
+					<b>Version</b> 3.0.2-pre
+				</div>
+				<strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong> All rights
+				reserved.
+			</footer>
+
+			<!-- Control Sidebar -->
+			<aside class="control-sidebar control-sidebar-dark">
+				<!-- Control sidebar content goes here -->
+			</aside>
+			<!-- /.control-sidebar -->
+		</div>
+		<!-- ./wrapper -->
+
+		<!-- jQuery -->
+		<script src="<?= base_url() ?>plugins/jquery/jquery.min.js"></script>
+		<!-- Bootstrap 4 -->
+		<script src="<?= base_url() ?>plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+		<!-- AdminLTE App -->
+		<script src="<?= base_url() ?>dist/js/adminlte.min.js"></script>
+		<!-- AdminLTE for demo purposes -->
+		<script src="<?= base_url() ?>dist/js/demo.js"></script>
+		<!-- DataTables -->
+		<script src="<?= base_url() ?>plugins/datatables/jquery.dataTables.js"></script>
+		<script src="<?= base_url() ?>plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+		<!-- page script -->
+		<script>
+			$(function () {
+				$('#data_artikel').DataTable({
+					"paging": true,
+					"lengthChange": false,
+					"searching": false,
+					"ordering": true,
+					"info": true,
+					"autoWidth": false,
+				});
+			});
+		</script>
+		<!-- END KONTEN UTAMA >
+		<script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
+		<script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script-->
+	</div>
+</body>
+
 </html>
