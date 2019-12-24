@@ -321,6 +321,7 @@
 		<!-- page script -->
 		<script>
 			$(function () {
+        $('#example1').DataTable();
 				$('#data_artikel').DataTable({
 					"paging": true,
 					"lengthChange": false,
