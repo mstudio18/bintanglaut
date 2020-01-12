@@ -34,7 +34,7 @@
 					<a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
 				</li>
 				<li class="nav-item d-none d-sm-inline-block">
-					<a href="<?= base_url()?>index.php/artikel" class="nav-link">Home</a>
+					<a href="<?= base_url()?>index.php/Banner" class="nav-link">Home</a>
 				</li>
 				<li class="nav-item d-none d-sm-inline-block">
 					<a href="#" class="nav-link">Contact</a>
@@ -185,20 +185,20 @@
 								</p>
 							</a>
 						<li class="nav-item">
-							<a href="<?= base_url()?>index.php/artikel/index/" class="nav-link">
+							<a href="<?= base_url()?>index.php/Banner/index/" class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Artikel</p>
+								<p>Banner</p>
 							</a>
 						</li>
 						<li class="nav-item">
-							<a href="<?= base_url()?>index.php/artikel/tambah" class="nav-link">
+							<a href="<?= base_url()?>index.php/Banner/tambah" class="nav-link">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Tambah Artikel</p>
+								<p>Tambah Banner</p>
 							</a>
 						<li class="nav-item">
-							<a href="<?= base_url()?>index.php/artikel/edit/" class="nav-link active">
+							<a href="<?= base_url()?>index.php/Banner/edit/" class="nav-link active">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Edit Artikel</p>
+								<p>Edit Banner</p>
 							</a>
 						</li>
 						</li>
@@ -230,12 +230,12 @@
 				<div class="container-fluid">
 					<div class="row mb-2">
 						<div class="col-sm-6">
-							<h1>Edit Artikel</h1>
+							<h1>Edit Banner</h1>
 						</div>
 						<div class="col-sm-6">
 							<ol class="breadcrumb float-sm-right">
-								<li class="breadcrumb-item"><a href="<?= base_url()?>index.php/artikel/index/" >Home</a></li>
-								<li class="breadcrumb-item active">Edit Artikel</li>
+								<li class="breadcrumb-item"><a href="<?= base_url()?>index.php/Banner/index/" >Home</a></li>
+								<li class="breadcrumb-item active">Edit Banner</li>
 							</ol>
 						</div>
 					</div>
@@ -257,23 +257,15 @@
 								</div>
 							</div>
 							<div class="card-body">
-								<form action="<?=base_url()?>index.php/artikel/updatedata" method="post" enctype="multipart/form-data"
+								<form action="<?=base_url()?>index.php/banner/updatedata" method="post" enctype="multipart/form-data"
 									class="form-group">
 									<div class="form-group">
-										<label>Nama</label>
-										<input class="form-control" type="text" name="name" value="<?=$data->judul?>">
-									</div>
-									<div class="form-group">
-										<label>Alamat</label>
-										<textarea class="form-control" name="alamat" rows="8" cols="80"><?=$data->artikel?></textarea>
-									</div>
-									<div class="form-group">
-										<label>foto</label>
+										<label>Gambar Banner</label>
 										<input class="form-control" type="file" name="fotopost">
 									</div>
 									<div class="form-group">
 										<!-- file lama -->
-										<input class="form-control" type="hidden" name="filelama" value="<?=$data->foto?>">
+										<input class="form-control" type="hidden" name="filelama" value="<?=$data->image?>">
 										<!-- ID -->
 										<input class="form-control" type="hidden" name="id" value="<?=$data->id?>">
 									</div>

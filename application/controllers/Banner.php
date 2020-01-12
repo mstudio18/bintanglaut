@@ -27,7 +27,7 @@ class Banner extends CI_Controller {
           endif;
 
           $config['page_query_string'] = TRUE;
-      		$config['base_url'] 				 = base_url().'index.php/artikel/?cari='.$cari;
+      		$config['base_url'] 				 = base_url().'index.php/banner/?cari='.$cari;
       		$config['total_rows'] 			 = $this->banner_model->jumlah_row($search);
 
       		$config['per_page'] 				 = $batas;
@@ -74,22 +74,8 @@ class Banner extends CI_Controller {
       return $this->load->view('banner/tambah_data');
   }
 
-  public function edit($id)
+  public function insertdata()
   {
-      $kondisi = array('id' => $id );
-
-      $data['data'] = $this->artikel_model->get_by_id($kondisi);
-      return $this->load->view('edit_data',$data);
-  }
-
-  public function updatedata()
-  {
-      $id   = $this->input->post('id');
-      $name = $this->input->post('image');
-
-      $path = './assets/picture/';
-
-      $kondisi = array('id' => $id );
 
       // get foto
       $config['upload_path'] = './assets/picture';
@@ -105,20 +91,62 @@ class Banner extends CI_Controller {
 	        if ( $this->upload->do_upload('fotopost') ) {
 	            $foto = $this->upload->data();
 	            $data = array(
-	                          'id'       => $id,
-                            'image'       => $foto['file_name'],
+                            'image'       => $foto['file_name']
 	                        );
-              // hapus foto pada direktori
-              @unlink($path.$this->input->post('filelama'));
-
-							$this->banner_model->update($data,$kondisi);
-              redirect('');
+							$this->banner_model->insert($data);
+              redirect('banner');
 	        }else {
-              die("gagal update");
+              die("gagal upload");
 	        }
 	    }else {
 	      echo "tidak masuk";
 	    }
+  }
+
+    public function edit($id)
+    {
+        $kondisi = array('id' => $id );
+
+        $data['data'] = $this->banner_model->get_by_id($kondisi);
+        return $this->load->view('banner/edit_data',$data);
+    }
+
+    // update
+    public function updatedata()
+    {
+        $id   = $this->input->post('id');
+
+        $path = './assets/picture/';
+
+        $kondisi = array('id' => $id );
+
+        // get foto
+        $config['upload_path'] = './assets/picture';
+        $config['allowed_types'] = 'jpg|png|jpeg|gif';
+        $config['max_size'] = '2048';  //2MB max
+        $config['max_width'] = '4480'; // pixel
+        $config['max_height'] = '4480'; // pixel
+        $config['file_name'] = $_FILES['fotopost']['name'];
+
+        $this->upload->initialize($config);
+
+  	    if (!empty($_FILES['fotopost']['name'])) {
+  	        if ( $this->upload->do_upload('fotopost') ) {
+  	            $foto = $this->upload->data();
+  	            $data = array(
+                              'image'       => $foto['file_name']
+  	                        );
+                // hapus foto pada direktori
+                @unlink($path.$this->input->post('filelama'));
+
+  							$this->banner_model->update($data,$kondisi);
+                redirect('banner');
+  	        }else {
+                die("gagal update");
+  	        }
+  	    }else {
+  	      echo "tidak masuk";
+  	    }
 
     }
 }

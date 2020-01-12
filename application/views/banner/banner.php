@@ -256,26 +256,28 @@
 							<thead>
 								<tr>
 									<th>No</th>
+                  <th>Nama Gambar</th>
 									<th>gambar</th>
+                  <th>status</th>
 								</tr>
 							</thead>
 							<tbody>
 								<?php foreach ($data as $data): ?>
 								<tr>
 									<td>
-										<?php echo $data->judul?>
+										<?php echo $data->id ?>
 									</td>
 									<td>
-										<?php echo substr($data->Banner, 0 , 250) ?>
+										<?php echo substr($data->image, 0 , 250) ?>
 									</td>
 									<td>
-										<img src="<?=base_url()?>assets/picture/<?=$data->foto?>" alt="foto" style="max-width:150px">
+										<img src="<?=base_url()?>assets/picture/<?=$data->image?>" alt="foto" style="max-width:150px">
 									</td>
 									<td>Terposting</td>
 									<td>
 										<a href="<?=base_url()?>index.php/Banner/edit/<?=$data->id?>" class="btn btn-info"
 											role="button">Edit</a>
-										<a href="<?=base_url()?>index.php/Banner/deletedata/<?=$data->id?>/<?=$data->foto?>"
+										<a href="<?=base_url()?>index.php/Banner/deletedata/<?=$data->id?>/<?=$data->image?>"
 											class="btn btn-danger" role="button">Hapus</a>
 									</td>
 								</tr>
