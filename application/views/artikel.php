@@ -70,10 +70,10 @@
 						</li>
 
 						<li class="nav-item">
-							<a href="<?= base_url()?>index.php/banner/banner.php" class="nav-link">
+							<a href="<?= base_url()?>index.php/banner/index/" class="nav-link">
 								<i class="nav-icon fas fa-eye"></i>
 								<p>
-									Visi & Misi
+									Banner
 								</p>
 							</a>
 						</li>
@@ -171,6 +171,10 @@
 						</form>
 					</div>
 
+					<div class="container">
+						<?php echo $pagination ?>
+					</div>
+				</div>
 			</section>
 			<!-- /.card-body -->
 		</div>
