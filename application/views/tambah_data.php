@@ -134,7 +134,7 @@
 			<!-- KONTEN UTAMA -->
 			<section class="content">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-md-12">
 						<div class="card card-primary">
 							<div class="card-header">
 								<h3 class="card-title">General</h3>
@@ -159,6 +159,7 @@
 										<label>foto</label>
 										<input type="file" name="fotopost" class="form-control">
 									</div>
+									<a class="btn btn-default float-left" href="http://localhost/bintanglaut/index.php/artikel/index">back</a>
 									<input type="submit" name="submit" value="Submit"
 										class="btn btn-success float-right">
 								</form>

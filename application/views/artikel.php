@@ -70,7 +70,7 @@
 						</li>
 
 						<li class="nav-item">
-							<a href="pages/widgets.html" class="nav-link">
+							<a href="<?= base_url()?>index.php/banner/banner.php" class="nav-link">
 								<i class="nav-icon fas fa-eye"></i>
 								<p>
 									Visi & Misi
