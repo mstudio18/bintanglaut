@@ -1,27 +1,66 @@
 <html lang="en">
 
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>AdminLTE 3 | Project Edit</title>
-	<!-- Tell the browser to be responsive to screen width -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>AdminLTE 3 | General UI</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 4 -->
 
-	<!-- Font Awesome -->
-	<link rel="stylesheet" href="<?=base_url()?>plugins/fontawesome-free/css/all.min.css">
-	<!-- Ionicons -->
-	<link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-	<!-- overlayScrollbars -->
-	<link rel="stylesheet" href="<?=base_url()?>dist/css/adminlte.min.css">
-	<!-- Google Font: Source Sans Pro -->
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-	<!-- DataTables -->
-	<link rel="stylesheet" href="<?=base_url()?>plugins/datatables-bs4/css/dataTables.bootstrap4.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="<?=base_url()?>plugins/fontawesome-free/css/all.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="<?=base_url()?>/dist/css/adminlte.min.css">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 
-	<!-- Bootstrap >
-	<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="<?=base_url()?>assets/font/glyphicons-halflings-regular.ttf"-->
+  <style>
+    .color-palette {
+      height: 35px;
+      line-height: 35px;
+      text-align: right;
+      padding-right: .75rem;
+    }
 
+    .color-palette.disabled {
+      text-align: center;
+      padding-right: 0;
+      display: block;
+    }
+
+    .color-palette-set {
+      margin-bottom: 15px;
+    }
+
+    .color-palette span {
+      display: none;
+      font-size: 12px;
+    }
+
+    .color-palette:hover span {
+      display: block;
+    }
+
+    .color-palette.disabled span {
+      display: block;
+      text-align: left;
+      padding-left: .75rem;
+    }
+
+    .color-palette-box h4 {
+      position: absolute;
+      left: 1.25rem;
+      margin-top: .75rem;
+      color: rgba(255, 255, 255, 0.8);
+      font-size: 12px;
+      display: block;
+      z-index: 7;
+    }
+
+  </style>
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -176,7 +215,7 @@
 
 				<!-- Sidebar Menu -->
 				<nav class="mt-2">
-					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+					<ul class="nav nav-pills nav-sidebar flex-column" data-widget="Treeview" role="menu" data-accordion="false">
 						<!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
 
@@ -217,7 +256,35 @@
 								<i class="far fa-circle nav-icon"></i>
 								<p>Contacts</p>
 							</a>
+						<li class="nav-item has-treeview">
+						<a href="#" class="nav-link">
+							<i class="nav-icon fas fa-book"></i>
+							<p>
+								Baner
+								<i class="fas fa-angle-left right"></i>
+							</p>
+						</a>
 						</li>
+						<li class="nav-item">
+						<a href="#" class="nav-link">
+							<i class="nav-icon fas fa-book"></i>
+							<p>
+								Galeri
+								<i class="fas fa-angle-left right"></i>
+							</p>
+						</a>
+					</li>
+
+					<li class="nav-item">
+					<a href="#" class="nav-link">
+						<i class="nav-icon fas fa-book"></i>
+						<p>
+							Visi & Misi
+							<i class="fas fa-angle-left right"></i>
+						</p>
+					</a>
+				</li>
+					</li>
 					</ul>
 					</li>
 					</ul>
