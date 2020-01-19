@@ -16,7 +16,8 @@
 	<link rel="stylesheet" href="<?=base_url()?>dist/css/adminlte.min.css">
 	<!-- Google Font: Source Sans Pro -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
-
+	<!-- toastr -->
+	<link rel="stylesheet" href="<?=base_url()?>plugins/toastr/toastr.min.css">
 	<!-- Bootstrap >
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?=base_url()?>assets/font/glyphicons-halflings-regular.ttf"-->
@@ -146,7 +147,7 @@
 							</div>
 							<div class="card-body">
 								<form action="<?=base_url()?>index.php/artikel/insertdata" method="post"
-									enctype="multipart/form-data" class="form-group">
+									enctype="multipart/form-data" class="form-group" onsubmit="return isValidForm()">
 									<div class="form-group">
 										<label>Judul</label>
 										<input type="text" name="judul" value="" class="form-control">
@@ -159,9 +160,10 @@
 										<label>foto</label>
 										<input type="file" name="fotopost" class="form-control">
 									</div>
-									<a class="btn btn-default float-left" href="http://localhost/bintanglaut/index.php/artikel/index">back</a>
+									<a class="btn btn-default float-left"
+										href="http://localhost/bintanglaut/index.php/artikel/index">back</a>
 									<input type="submit" name="submit" value="Submit"
-										class="btn btn-success float-right">
+										class="btn btn-success float-right toastrDefaultError">
 								</form>
 							</div>
 						</div>
@@ -202,6 +204,32 @@
 	<script src="<?= base_url() ?>dist/js/adminlte.min.js"></script>
 	<!-- AdminLTE for demo purposes -->
 	<script src="<?= base_url() ?>dist/js/demo.js"></script>
+	<!-- Toastr -->
+	<script src="<?= base_url() ?>plugins/toastr/toastr.min.js"></script>
+	<script type="text/javascript">
+		$(function () {
+			$('.toastrDefaultError').click(function () {
+				toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
+				toastr.options = {
+					"closeButton": false,
+					"debug": false,
+					"newestOnTop": false,
+					"progressBar": false,
+					"positionClass": "toast-top-right",
+					"preventDuplicates": false,
+					"showDuration": "300",
+					"hideDuration": "1000",
+					"timeOut": "5000",
+					"extendedTimeOut": "1000",
+					"showEasing": "swing",
+					"hideEasing": "linear",
+					"showMethod": "fadeIn",
+					"hideMethod": "fadeOut"
+				}
+			});
+		});
+
+	</script>
 	<!-- END KONTEN UTAMA >
 		<script src="<?= base_url() ?>assets/js/jquery.min.js"></script>
 		<script src="<?= base_url() ?>assets/js/bootstrap.min.js"></script-->

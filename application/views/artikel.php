@@ -17,7 +17,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 	<!-- DataTables -->
 	<link rel="stylesheet" href="<?=base_url()?>plugins/datatables-bs4/css/dataTables.bootstrap4.css">
-
+	<!-- toastr -->
+	<link rel="stylesheet" href="<?=base_url()?>plugins/toastr/toastr.min.css">
 	<!-- Bootstrap >
 	<link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?=base_url()?>assets/font/glyphicons-halflings-regular.ttf"-->
@@ -130,7 +131,7 @@
 						</div>
 					</div>
 				</div><!-- /.container-fluid -->
-				<div class="card">
+				<div class="card card-primary card-outline">
 					<!-- /.card-header -->
 					<div class="card-body">
 						<a class="btn btn-primary" href="<?=base_url()?>index.php/artikel/tambah">Tambah Data</a>
@@ -206,6 +207,8 @@
 	<!-- DataTables -->
 	<script src="<?= base_url() ?>plugins/datatables/jquery.dataTables.js"></script>
 	<script src="<?= base_url() ?>plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+	<!-- Toastr -->
+	<script src="<?= base_url() ?>plugins/toastr/toastr.min.js"></script>
 	<!-- page script -->
 	<script>
 		$(function () {
@@ -217,6 +220,14 @@
 				"ordering": true,
 				"info": true,
 				"autoWidth": false,
+			});
+		});
+
+	</script>
+	<script type="text/javascript">
+		$(function () {
+			$('.toastrDefaultError').click(function () {
+			toastr.error('Lorem ipsum dolor sit amet, consetetur sadipscing elitr.')
 			});
 		});
 	</script>

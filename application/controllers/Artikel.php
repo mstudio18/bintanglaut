@@ -105,7 +105,14 @@ class Artikel extends CI_Controller {
               die("gagal upload");
 	        }
 	    }else {
-	      echo "tidak masuk";
+	      echo "<script type='text/javascript'>
+        $(function () {
+          $('.toastrDefaultError').click(function () {
+            toastr['error']('Are you the six fingered man?')
+          });
+        });
+        </script>";
+      redirect('artikel/tambah');
 	    }
 
   }
@@ -168,7 +175,13 @@ class Artikel extends CI_Controller {
               die("gagal update");
 	        }
 	    }else {
-	      echo "tidak masuk";
+	      echo "<script $(document).Toasts('create', {
+          class: 'bg-maroon',
+          title: 'Toast Title',
+          subtitle: 'Subtitle',
+          body: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr.'
+        });
+        </script>";
 	    }
 
   }

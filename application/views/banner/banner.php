@@ -130,7 +130,7 @@
 						</div>
 					</div>
 				</div><!-- /.container-fluid -->
-				<div class="card">
+				<div class="card card-primary card-outline">
 					<div class="card-header">
 						<h3 class="card-title">Ukuran Gambar Wajib Berukuran 1920x826 Pixel</h3>
 					</div>
@@ -167,8 +167,8 @@
 										<td class="btn-group float-center">
 											<a href="<?=base_url()?>index.php/banner/edit/<?=$data->id?>"
 												class="btn btn-default fas fa-edit" role="button"></a>
-											<a href="<?=base_url()?>index.php/banner/deletedata/<?=$data->id?>/<?=$data->image?>"
-												class="btn btn-default fas fa-trash-alt" role="button"></a>
+											<!--a href="<?=base_url()?>index.php/banner/deletedata/<?=$data->id?>/<?=$data->image?>"
+												class="btn btn-default fas fa-trash-alt" role="button"></a-->
 										</td>
 									</tr>
 									<?php endforeach; ?>
